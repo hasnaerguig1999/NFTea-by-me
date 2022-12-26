@@ -1,0 +1,573 @@
+*,
+*:focus {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+:root {
+    --primary__color: white;
+    --secondary__color: #7C24D4;
+    --background__color: #141414;
+}
+
+body {
+    background-color: var(--background__color);
+    background: linear-gradient(to right, var(--background__color), #120125);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+/* ___________header__style___________ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+    height: 80px;
+    background: linear-gradient(to right, var(--background__color), #120125);
+}
+
+header #logo {
+    color: white;
+    font-size: 1.7em;
+    /* font-weight: 600; */
+}
+
+header .nav__bar {
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    font-size: 1em;
+}
+
+header .nav__bar ul {
+    display: flex;
+    gap: 4vw;
+}
+
+header .nav__bar ul li a {
+    color: var(--primary__color);
+}
+
+header .nav__bar ul li a:hover {
+    color: var(--secondary__color);
+}
+
+header .nav__bar .sign_in__button button {
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: var(--secondary__color);
+    cursor: pointer;
+}
+
+header .nav__bar .sign_in__button button a {
+    color: var(--primary__color);
+    font-size: 1em;
+    font-weight: 600;
+}
+
+header .burger__menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+header .burger__menu .burger__bar {
+    width: 20px;
+    height: 3px;
+    margin: 2px;
+    background-color: var(--primary__color);
+    transition: all 0.3s ease-in-out;
+}
+
+/* ________Responsive__header________ */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 25px;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    header .nav__bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        background-color: #141414;
+        border-radius: 4px;
+        width: 100%;
+        height: 50vh;
+        top: -1000%;
+        z-index: 100;
+        transition: all 0.5s ease;
+    }
+
+    header .nav__bar.is-active {
+        top: 100%;
+    }
+
+    header .nav__bar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .burger__menu {
+        display: flex;
+    }
+
+    .burger__menu.is-active .burger__bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger__menu.is-active .burger__bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .burger__menu.is-active .burger__bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/* _______HOME__HERO__SECTION_____ */
+.hero__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: calc(100vh - 80px - 10vh);
+}
+
+.hook__text__part {
+    display: flex;
+    flex-direction: column;
+}
+
+.hook__text__part h1 {
+    color: var(--primary__color);
+    font-size: 4em;
+}
+
+.hook__text__part p {
+    color: #dddd;
+    font-size: 1.8em;
+    opacity: 0.8;
+}
+
+.hook__btn__container {
+    display: flex;
+    margin-top: 10vh;
+    width: 150px;
+    height: 50px;
+}
+
+.hook__btn__container button {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: var(--primary__color);
+}
+
+.hook__btn__container button a {
+    color: var(--secondary__color);
+    font-size: 1.2em;
+}
+
+.hook__statistics__part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5vh;
+}
+
+.nft__statistics,
+.collection__statistics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 25vh;
+    width: 70%;
+    min-width: 300px;
+    border-radius: 8px;
+    box-shadow: white 0px 0px 10px 2px;
+    font-size: 3em;
+}
+
+.hook__statistics__part p {
+    color: #7C24D4;
+}
+
+.nft_top_down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4vh;
+    color: white;
+    font-size: 1.4em;
+}
+.bx{
+   background-color:  white;
+   color: #7C24D4;
+}
+/* ________Responsive__header________ */
+@media screen and (max-width: 768px) {
+    .hero__section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        row-gap: 2vh;
+        height: auto;
+    }
+
+    .hook__text__part {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hook__text__part h1 {
+        font-size: 3em;
+    }
+
+    .hook__text__part p {
+        font-size: 1.4em;
+    }
+
+    .hook__btn__container {
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+
+@media screen and (max-width: 480px) {
+    .hook__text__part h1 {
+        font-size: 2.7em;
+    }
+
+    .hook__text__part p {
+        font-size: 1.2em;
+    }
+
+    .nft_top_down {
+        flex-direction: column;
+        row-gap: 5vh;
+    }
+}
+
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/* _______FOOTER_______ */
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary__color);
+    opacity: 0.5;
+    gap: 20px;
+    height: 10vh;
+}
+
+.footer__container .social__media__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer__container {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        margin-top: 200px;
+    }
+
+    .footer__container .social__media__icons {
+        justify-content: center;
+    }
+}
+
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/* ________collections style ________ */
+.collections {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.collections h2 {
+    margin-bottom: 5vh;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+.call__to__action {
+    display: flex;
+    justify-content: center;
+}
+
+.call__to__action button {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: var(--secondary__color);
+}
+
+.call__to__action button a {
+    color: var(--primary__color);
+    font-size: 1.2em;
+}
+
+.collections__items {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 5vh;
+    column-gap: 2vw;
+}
+
+.collection__card {
+    display: grid;
+    grid-template-columns: 160px auto;
+    grid-template-rows: 250px;
+    width: 500px;
+    height: 250px;
+    background: linear-gradient(to right, #141414, #120125);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+}
+
+.collection__card:hover {
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.50);
+}
+
+.collection__img {
+    border-radius: 7px 0 0 8px;
+    background-image: url(../images/monkey-3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.collection__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    color: white;
+}
+
+.collection__name {
+    letter-spacing: 4px;
+}
+
+.collection__name__and__artist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    margin-bottom: 20px;
+}
+
+.collection__info .nfts__and__price {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    color: rgb(20, 160, 20);
+    font-weight: 600;
+}
+
+.collection__explore {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    row-gap: 2vw;
+}
+
+.collection__explore__btn {
+    width: 100px;
+    height: 28px;
+    background-color: #7C24D4;
+    border-radius: 4px;
+}
+
+.collection__explore__btn a {
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    .collection__card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px auto;
+        height: 500px;
+        width: 250px;
+        background: linear-gradient(to bottom, #141414, #120125);
+    }
+
+    .collection__img {
+        height: 100%;
+        width: 100%;
+        border-radius: 7px 8px 0 0px;
+    }
+    .collection__explore {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/* ________NFT style ________ */
+.nft__section {
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+
+.nft__section h2 {
+    margin-bottom: 5vh;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+.nft__items {
+    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 5vh;
+    column-gap: 2vw;
+}
+
+.nft__card {
+    width: 250px;
+    height: 350px;
+    background: url('../images/cat.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.2);
+    filter: brightness(0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    padding: 10px;
+    color: #141414;
+}
+
+.nft__card:hover {
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.5);
+    filter: brightness(1);
+    padding: 20px;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .nft__card {
+        box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.2);
+        filter: brightness(1);
+        padding: 20px;
+        color: white;
+    }
+}
+
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/********************************************************************************************************************************************************
+*********************************************************************************************************************************************************
+*********************************************************************************************************************************************************/
+/* ________sign__in__style ________ */
+.sign__in__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    row-gap: 4vh;
+}
+
+.sign__in__form .user__name__container,
+.password__container {
+    min-width: 250px;
+}
+
+.sign__in__form .user__name__container input,
+.password__container input {
+    max-width: 500px;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.sign__in__form .submit__container {
+    display: flex;
+}
+
+.sign__in__form .submit__container input {
+    width: 150px;
+    height: 40px;
+    background-color: #7C24D4;
+    color: white;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    .sign__in__form {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sign__in__form .user__name__container input,
+    .password__container input {
+        text-align: center;
+    }
+}

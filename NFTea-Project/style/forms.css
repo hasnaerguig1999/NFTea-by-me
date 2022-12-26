@@ -1,0 +1,86 @@
+.form_ {
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_ h1 {
+    color: white;
+    margin-bottom: 5vh;
+}
+
+#collection_form,
+.nft_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5vh;
+    width: 33vw;
+    box-shadow: white 0px 0px 20px;
+    padding: 20px;
+    min-width: 320px;
+    border-radius: 4px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    height: 80px;
+    padding: 10px;
+    resize: none;
+    border-radius: 4px;
+}
+
+textarea:focus {
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+#collection_form input,
+.nft_form input {
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#collection_form .button,
+.nft_form .button {
+    color: white;
+    background-color: #7C24D4;
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#collection_form #submit,
+.nft_form #submit {
+    width: 50%;
+    max-width: 250px;
+    min-width: 150px;
+    color: #7C24D4;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#collection__select {
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 4px;
+}
